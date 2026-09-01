@@ -114,12 +114,13 @@ export const ContactSection: React.FC = () => {
                         <span className="text-[9px] px-1.5 py-0.2 rounded bg-purple-900/60 text-purple-200">Data Lead</span>
                       </div>
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-white font-mono mt-0.5">
-                        <a href="tel:8208779355" className="hover:text-purple-300 font-semibold">+91 82087 79355</a>
-                        <span className="text-gray-500">•</span>
+                        <a href="tel:8208779355" className="hover:text-purple-300 font-semibold" aria-label="Call Yamini at +91 82087 79355">+91 82087 79355</a>
+                        <span className="text-gray-400">•</span>
                         <a 
                           href={`https://mail.google.com/mail/?view=cm&fs=1&to=yamininandanwar1310@gmail.com&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent("Hi Yamini,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,")}`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="Email Yamini at yamininandanwar1310@gmail.com"
                           className="hover:text-purple-300 truncate max-w-[150px] sm:max-w-[180px]"
                         >
                           yamininandanwar1310@gmail.com
@@ -128,20 +129,22 @@ export const ContactSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1 flex-shrink-0">
+                  <div className="flex items-center gap-1.5 flex-shrink-0">
                     <a
                       href="https://wa.me/918208779355?text=Hi%20Yamini%2C%20I%20would%20like%20to%20discuss%20a%20project%20at%20SYQORA%20NEXUS."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition-colors"
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition-colors"
                       title="WhatsApp Yamini"
+                      aria-label="Chat with Yamini on WhatsApp"
                     >
                       <MessageCircle className="w-4 h-4" />
                     </a>
                     <a
                       href="tel:8208779355"
-                      className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors"
                       title="Call Yamini"
+                      aria-label="Call Yamini"
                     >
                       <Phone className="w-4 h-4" />
                     </a>
@@ -162,12 +165,13 @@ export const ContactSection: React.FC = () => {
                         <span className="text-[9px] px-1.5 py-0.2 rounded bg-cyan-900/60 text-cyan-200">Tech Lead</span>
                       </div>
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-white font-mono mt-0.5">
-                        <a href="tel:7249891311" className="hover:text-cyan-300 font-semibold">+91 72498 91311</a>
-                        <span className="text-gray-500">•</span>
+                        <a href="tel:7249891311" className="hover:text-cyan-300 font-semibold" aria-label="Call Shubham at +91 72498 91311">+91 72498 91311</a>
+                        <span className="text-gray-400">•</span>
                         <a 
                           href={`https://mail.google.com/mail/?view=cm&fs=1&to=iamshubham.s27@gmail.com&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent("Hi Shubham,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,")}`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          aria-label="Email Shubham at iamshubham.s27@gmail.com"
                           className="hover:text-cyan-300 truncate max-w-[150px] sm:max-w-[180px]"
                         >
                           iamshubham.s27@gmail.com
@@ -176,20 +180,22 @@ export const ContactSection: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1 flex-shrink-0">
+                  <div className="flex items-center gap-1.5 flex-shrink-0">
                     <a
                       href="https://wa.me/917249891311?text=Hi%20Shubham%2C%20I%20would%20like%20to%20discuss%20a%20project%20at%20SYQORA%20NEXUS."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition-colors"
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 transition-colors"
                       title="WhatsApp Shubham"
+                      aria-label="Chat with Shubham on WhatsApp"
                     >
                       <MessageCircle className="w-4 h-4" />
                     </a>
                     <a
                       href="tel:7249891311"
-                      className="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors"
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors"
                       title="Call Shubham"
+                      aria-label="Call Shubham"
                     >
                       <Phone className="w-4 h-4" />
                     </a>
@@ -216,19 +222,21 @@ export const ContactSection: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => copyToClipboard(STUDIO_CONFIG.email, 'email')}
-                      className="p-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
                       title="Copy Email"
+                      aria-label="Copy studio email address to clipboard"
                     >
-                      {copiedField === 'email' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                      {copiedField === 'email' ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
                     </button>
                     <a
                       href={`https://mail.google.com/mail/?view=cm&fs=1&to=iamshubham.s27@gmail.com&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent("Hi Shubham,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,")}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-1.5 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-colors"
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white/10 text-white hover:bg-white/20 transition-colors"
                       title="Open Gmail Draft"
+                      aria-label="Open pre-filled Gmail draft for studio inquiry"
                     >
-                      <ArrowUpRight className="w-3.5 h-3.5" />
+                      <ArrowUpRight className="w-4 h-4" />
                     </a>
                   </div>
                 </div>
@@ -239,7 +247,7 @@ export const ContactSection: React.FC = () => {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[10px] font-mono text-gray-500 uppercase font-bold tracking-wider block">
+                    <span className="text-[10px] font-mono text-gray-400 uppercase font-bold tracking-wider block">
                       STUDIO BASE
                     </span>
                     <span className="text-xs text-gray-200 font-medium">
@@ -265,23 +273,29 @@ export const ContactSection: React.FC = () => {
               <form onSubmit={handleSendWhatsApp} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono text-gray-300">Your Name / Business</label>
+                    <label htmlFor="contact-sender-name" className="text-xs font-mono text-gray-300">
+                      Your Name / Business
+                    </label>
                     <input
+                      id="contact-sender-name"
                       type="text"
                       required
                       value={senderName}
                       onChange={(e) => setSenderName(e.target.value)}
                       placeholder="e.g. Rahul Sharma / Salon Owner"
-                      className="w-full bg-black/40 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400"
+                      className="w-full bg-black/40 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400 min-h-[44px]"
                     />
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-mono text-gray-300">Project Type</label>
+                    <label htmlFor="contact-project-type" className="text-xs font-mono text-gray-300">
+                      Project Type
+                    </label>
                     <select
+                      id="contact-project-type"
                       value={projectType}
                       onChange={(e) => setProjectType(e.target.value)}
-                      className="w-full bg-black/40 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400"
+                      className="w-full bg-black/40 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400 min-h-[44px]"
                     >
                       <option>Business / Salon / Gym Website</option>
                       <option>High-Converting Landing Page</option>
@@ -300,7 +314,7 @@ export const ContactSection: React.FC = () => {
                         key={b}
                         type="button"
                         onClick={() => setBudgetRange(b)}
-                        className={`py-2 px-2 rounded-xl text-xs font-medium transition-all ${
+                        className={`py-2.5 px-2 min-h-[44px] rounded-xl text-xs font-medium transition-all ${
                           budgetRange === b
                             ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/50 font-bold'
                             : 'bg-black/30 text-gray-400 border border-white/10 hover:border-white/20'
@@ -313,8 +327,11 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono text-gray-300">Project Details or Requirements</label>
+                  <label htmlFor="contact-project-message" className="text-xs font-mono text-gray-300">
+                    Project Details or Requirements
+                  </label>
                   <textarea
+                    id="contact-project-message"
                     rows={3}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
@@ -327,7 +344,7 @@ export const ContactSection: React.FC = () => {
                 <div className="pt-2 flex flex-col sm:flex-row gap-3">
                   <button
                     type="submit"
-                    className="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25 transition-all"
+                    className="flex-1 py-3 px-4 min-h-[44px] rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25 transition-all"
                   >
                     <MessageCircle className="w-4 h-4 fill-white/20" />
                     <span>Send on WhatsApp</span>
@@ -337,7 +354,7 @@ export const ContactSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleSendEmail}
-                    className="py-3 px-5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-gray-200 font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
+                    className="py-3 px-5 min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-gray-200 font-semibold text-xs flex items-center justify-center gap-2 transition-colors"
                   >
                     <Mail className="w-4 h-4 text-purple-400" />
                     <span>Open Email Draft</span>

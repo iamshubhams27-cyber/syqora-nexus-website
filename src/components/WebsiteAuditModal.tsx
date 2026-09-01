@@ -47,7 +47,8 @@ export const WebsiteAuditModal: React.FC<WebsiteAuditModalProps> = ({ isOpen, on
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+          aria-label="Close audit request modal"
+          className="absolute top-5 right-5 p-2.5 min-w-[44px] min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white flex items-center justify-center transition-colors"
         >
           <X className="w-5 h-5" />
         </button>
@@ -58,9 +59,9 @@ export const WebsiteAuditModal: React.FC<WebsiteAuditModalProps> = ({ isOpen, on
             <Sparkles className="w-4 h-4" />
             <span>COMPLIMENTARY AUDIT REPORT</span>
           </div>
-          <h3 className="text-2xl font-bold text-white font-display">
+          <h2 className="text-2xl font-bold text-white font-display">
             Free 100-Point Website & Speed Audit
-          </h3>
+          </h2>
           <p className="text-xs text-gray-300">
             Shubham & Yamini will personally inspect your site’s Core Web Vitals, mobile responsiveness, UI friction points, and SEO schema.
           </p>
@@ -69,8 +70,11 @@ export const WebsiteAuditModal: React.FC<WebsiteAuditModalProps> = ({ isOpen, on
         {/* Audit Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1.5">
-            <label className="text-xs font-mono text-gray-300">Business or Brand Name</label>
+            <label htmlFor="audit-business-name" className="text-xs font-mono text-gray-300">
+              Business or Brand Name
+            </label>
             <input
+              id="audit-business-name"
               type="text"
               required
               value={businessName}
@@ -81,8 +85,11 @@ export const WebsiteAuditModal: React.FC<WebsiteAuditModalProps> = ({ isOpen, on
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-mono text-gray-300">Existing Website URL (or leave blank if new project)</label>
+            <label htmlFor="audit-website-url" className="text-xs font-mono text-gray-300">
+              Existing Website URL (or leave blank if new project)
+            </label>
             <input
+              id="audit-website-url"
               type="text"
               value={websiteUrl}
               onChange={(e) => setWebsiteUrl(e.target.value)}
@@ -92,11 +99,14 @@ export const WebsiteAuditModal: React.FC<WebsiteAuditModalProps> = ({ isOpen, on
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-mono text-gray-300">What is your primary focus area?</label>
+            <label htmlFor="audit-primary-goal" className="text-xs font-mono text-gray-300">
+              What is your primary focus area?
+            </label>
             <select
+              id="audit-primary-goal"
               value={primaryGoal}
               onChange={(e) => setPrimaryGoal(e.target.value)}
-              className="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400"
+              className="w-full bg-black/40 border border-white/15 rounded-xl px-3 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400 min-h-[44px]"
             >
               <option>Improve Mobile Speed & Conversion</option>
               <option>Modernize UI/UX to High-End Luxury Aesthetic</option>
@@ -107,8 +117,11 @@ export const WebsiteAuditModal: React.FC<WebsiteAuditModalProps> = ({ isOpen, on
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-xs font-mono text-gray-300">Your WhatsApp / Phone or Email</label>
+            <label htmlFor="audit-contact-info" className="text-xs font-mono text-gray-300">
+              Your WhatsApp / Phone or Email
+            </label>
             <input
+              id="audit-contact-info"
               type="text"
               value={phoneOrEmail}
               onChange={(e) => setPhoneOrEmail(e.target.value)}
@@ -120,7 +133,7 @@ export const WebsiteAuditModal: React.FC<WebsiteAuditModalProps> = ({ isOpen, on
           <div className="pt-3">
             <button
               type="submit"
-              className="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/25 transition-all"
+              className="w-full py-3.5 min-h-[44px] rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-xl shadow-emerald-500/25 transition-all"
             >
               <MessageCircle className="w-4 h-4 fill-white/20" />
               <span>Send Free Audit Request on WhatsApp</span>

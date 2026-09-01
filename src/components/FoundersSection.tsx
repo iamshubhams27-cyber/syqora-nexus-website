@@ -131,7 +131,8 @@ export const FoundersSection: React.FC = () => {
                   {founder.phone && (
                     <a
                       href={`tel:${cleanPhone}`}
-                      className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-gray-200 hover:text-cyan-300 transition-colors"
+                      aria-label={`Call ${founder.name} at ${founder.phone}`}
+                      className="flex items-center gap-2 px-2.5 py-2 min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 text-xs text-gray-200 hover:text-cyan-300 transition-colors"
                     >
                       <Phone className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
                       <span className="font-mono text-[11px] truncate">{founder.phone}</span>
@@ -142,7 +143,8 @@ export const FoundersSection: React.FC = () => {
                     href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(founder.email)}&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent(`Hi ${founder.name.split(' ')[0]},\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-gray-200 hover:text-cyan-300 transition-colors"
+                    aria-label={`Send email to ${founder.name} at ${founder.email}`}
+                    className="flex items-center gap-2 px-2.5 py-2 min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 text-xs text-gray-200 hover:text-cyan-300 transition-colors"
                   >
                     <Mail className="w-3.5 h-3.5 text-purple-400 flex-shrink-0" />
                     <span className="font-mono text-[11px] truncate">{founder.email}</span>
@@ -190,7 +192,8 @@ export const FoundersSection: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setSelectedFounder(founder)}
-                    className="flex-1 py-2 px-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white flex items-center justify-center gap-1.5 transition-colors"
+                    aria-label={`View dossier and credentials for ${founder.name}`}
+                    className="flex-1 py-2.5 px-3 min-h-[44px] rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs font-semibold text-white flex items-center justify-center gap-1.5 transition-colors"
                   >
                     <FileText className="w-3.5 h-3.5 text-cyan-400" />
                     <span>Dossier</span>
@@ -200,7 +203,8 @@ export const FoundersSection: React.FC = () => {
                     href={getFounderWhatsAppUrl(founder)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3.5 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                    aria-label={`Connect with ${founder.name} on WhatsApp`}
+                    className="px-3.5 py-2.5 min-h-[44px] rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-semibold flex items-center gap-1.5 transition-colors"
                     title={`Connect with ${founder.name} on WhatsApp`}
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
@@ -210,7 +214,8 @@ export const FoundersSection: React.FC = () => {
                   {founder.phone && (
                     <a
                       href={`tel:${cleanPhone}`}
-                      className="p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-colors"
+                      aria-label={`Call ${founder.name} directly on phone`}
+                      className="p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 hover:text-white transition-colors"
                       title={`Call ${founder.name}`}
                     >
                       <PhoneCall className="w-3.5 h-3.5 text-cyan-400" />
@@ -239,7 +244,8 @@ export const FoundersSection: React.FC = () => {
             <button
               type="button"
               onClick={() => setSelectedFounder(null)}
-              className="absolute top-5 right-5 p-2 rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+              aria-label="Close founder dossier"
+              className="absolute top-5 right-5 p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-xl bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
             >
               <X className="w-5 h-5" />
             </button>

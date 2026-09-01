@@ -177,7 +177,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPricingCalculator, onOpenAudit
               <button
                 type="button"
                 onClick={onOpenPricingCalculator}
-                className="inline-flex items-center justify-center gap-1.5 px-4 py-3.5 rounded-xl bg-cyan-950/30 hover:bg-cyan-950/60 text-cyan-300 border border-cyan-500/30 font-medium text-xs tracking-wide transition-all"
+                aria-label="Open project cost calculator"
+                className="inline-flex items-center justify-center gap-1.5 px-4 py-3.5 min-h-[44px] rounded-xl bg-cyan-950/30 hover:bg-cyan-950/60 text-cyan-300 border border-cyan-500/30 font-medium text-xs tracking-wide transition-all"
               >
                 <Zap className="w-3.5 h-3.5" />
                 <span>Cost Calculator</span>

@@ -71,11 +71,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
                 <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
                   Studio Pillars
                 </span>
-                <ul className="space-y-1.5 text-xs">
-                  <li><a href="#about" className="hover:text-cyan-300 transition-colors">About Founders</a></li>
-                  <li><a href="#work" className="hover:text-cyan-300 transition-colors">Selected Work</a></li>
-                  <li><a href="#services" className="hover:text-cyan-300 transition-colors">Services</a></li>
-                  <li><a href="#pricing" className="hover:text-cyan-300 transition-colors">Pricing Plans</a></li>
+                <ul className="space-y-2 text-xs">
+                  <li><a href="#about" className="hover:text-cyan-300 transition-colors py-1 inline-block">About Founders</a></li>
+                  <li><a href="#work" className="hover:text-cyan-300 transition-colors py-1 inline-block">Selected Work</a></li>
+                  <li><a href="#services" className="hover:text-cyan-300 transition-colors py-1 inline-block">Services</a></li>
+                  <li><a href="#pricing" className="hover:text-cyan-300 transition-colors py-1 inline-block">Pricing Plans</a></li>
                 </ul>
               </div>
 
@@ -83,19 +83,19 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
                 <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
                   Direct Tools
                 </span>
-                <ul className="space-y-1.5 text-xs">
+                <ul className="space-y-2 text-xs">
                   <li>
-                    <button type="button" onClick={onOpenPricingCalculator} className="hover:text-cyan-300 transition-colors text-left">
+                    <button type="button" onClick={onOpenPricingCalculator} className="hover:text-cyan-300 transition-colors text-left py-1 inline-block">
                       Scope Estimator
                     </button>
                   </li>
                   <li>
-                    <button type="button" onClick={onOpenAuditModal} className="hover:text-cyan-300 transition-colors text-left">
+                    <button type="button" onClick={onOpenAuditModal} className="hover:text-cyan-300 transition-colors text-left py-1 inline-block">
                       Free Speed Audit
                     </button>
                   </li>
                   <li>
-                    <a href="#contact" className="hover:text-cyan-300 transition-colors">
+                    <a href="#contact" className="hover:text-cyan-300 transition-colors py-1 inline-block">
                       Contact Studio
                     </a>
                   </li>
@@ -108,14 +108,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
               <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
                 Founder WhatsApp
               </span>
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-300">
                 Direct WhatsApp engineering hotline for quick questions and quote estimates.
               </p>
               <a
                 href={whatsappDirect}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 text-xs font-semibold transition-all"
+                aria-label="Call or chat on WhatsApp at +91 72498 91311"
+                className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/20 text-xs font-semibold transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>+91 72498 91311</span>
@@ -125,7 +126,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
           </div>
 
           {/* Bottom Copyright & Back to Top */}
-          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 font-mono">
+          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-mono">
             <div className="flex items-center gap-2">
               <span>© 2026 SYQORA NEXUS</span>
               <span>•</span>
@@ -136,7 +137,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
               <button
                 type="button"
                 onClick={scrollToTop}
-                className="flex items-center gap-1.5 text-gray-400 hover:text-cyan-300 transition-colors"
+                aria-label="Scroll back to top of page"
+                className="flex items-center gap-1.5 text-gray-400 hover:text-cyan-300 min-h-[44px] px-2 py-1 transition-colors"
               >
                 <span>Back to top</span>
                 <ArrowUp className="w-3.5 h-3.5" />

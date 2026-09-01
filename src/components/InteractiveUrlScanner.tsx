@@ -107,9 +107,9 @@ export const InteractiveUrlScanner: React.FC = () => {
             <Cpu className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-base font-bold text-white font-display">
+            <h3 className="text-base font-bold text-white font-display">
               Live Phishing URL Classifier Testbed
-            </h4>
+            </h3>
             <p className="text-xs text-gray-400 font-mono">
               Academic ML Feature Vector Scanner (Research Prototype)
             </p>
@@ -127,19 +127,23 @@ export const InteractiveUrlScanner: React.FC = () => {
       {/* Input Scanner Form */}
       <form onSubmit={handleScan} className="flex flex-col sm:flex-row gap-2">
         <div className="relative flex-1">
+          <label htmlFor="phishing-url-input" className="sr-only">
+            Enter web URL to evaluate security threat
+          </label>
           <Globe className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
           <input
+            id="phishing-url-input"
             type="text"
             value={inputUrl}
             onChange={(e) => setInputUrl(e.target.value)}
             placeholder="Enter web URL to test (e.g. https://example.com)"
-            className="w-full bg-black/40 border border-white/15 rounded-xl pl-10 pr-4 py-2.5 text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400 font-mono"
+            className="w-full bg-black/40 border border-white/15 rounded-xl pl-10 pr-4 py-2.5 min-h-[44px] text-xs sm:text-sm text-white focus:outline-none focus:border-cyan-400 font-mono"
           />
         </div>
         <button
           type="submit"
           disabled={isScanning}
-          className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 disabled:opacity-50 transition-all"
+          className="px-5 py-2.5 min-h-[44px] rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 disabled:opacity-50 transition-all"
         >
           {isScanning ? (
             <>
@@ -165,7 +169,8 @@ export const InteractiveUrlScanner: React.FC = () => {
             onClick={() => {
               setInputUrl(preset.url);
             }}
-            className="text-[11px] font-mono px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-cyan-300 hover:border-cyan-500/40 transition-colors"
+            aria-label={`Test preset URL: ${preset.label}`}
+            className="text-[11px] font-mono px-3 py-2 min-h-[36px] rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-cyan-300 hover:border-cyan-500/40 transition-colors"
           >
             {preset.label}
           </button>

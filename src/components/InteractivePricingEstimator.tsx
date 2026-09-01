@@ -84,14 +84,24 @@ export const InteractivePricingEstimator: React.FC = () => {
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14" role="radiogroup" aria-label="Monthly subscription plans">
           {PRICING_PLANS.map((plan) => {
             const isSelected = selectedPlanId === plan.id;
             return (
               <div
                 key={plan.id}
+                role="radio"
+                aria-checked={isSelected}
+                tabIndex={0}
+                aria-label={`${plan.name} plan at ₹${plan.price.toLocaleString('en-IN')} per month`}
                 onClick={() => setSelectedPlanId(plan.id)}
-                className={`relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between border cursor-pointer transition-all duration-300 ${
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedPlanId(plan.id);
+                  }
+                }}
+                className={`relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between border cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
                   plan.popular
                     ? 'bg-gradient-to-b from-[#0e1635] to-[#070b1c] border-cyan-500/50 shadow-2xl shadow-cyan-500/15 scale-[1.02]'
                     : isSelected
@@ -178,14 +188,14 @@ export const InteractivePricingEstimator: React.FC = () => {
               </h3>
             </div>
 
-            <div className="flex items-center gap-2 bg-black/40 p-1 rounded-xl border border-white/10">
+            <div className="flex items-center gap-2 bg-black/40 p-1.5 rounded-xl border border-white/10">
               <button
                 type="button"
                 onClick={() => setDeliverySpeed('standard')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                className={`px-3.5 py-2.5 min-h-[44px] rounded-lg text-xs font-mono transition-all ${
                   deliverySpeed === 'standard'
                     ? 'bg-white/10 text-white font-semibold'
-                    : 'text-gray-400 hover:text-white'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 Standard Sprint (3-7 Days)
@@ -193,10 +203,10 @@ export const InteractivePricingEstimator: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setDeliverySpeed('express')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all ${
+                className={`px-3.5 py-2.5 min-h-[44px] rounded-lg text-xs font-mono transition-all ${
                   deliverySpeed === 'express'
                     ? 'bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-300 border border-amber-500/40 font-semibold'
-                    : 'text-gray-400 hover:text-white'
+                    : 'text-gray-300 hover:text-white'
                 }`}
               >
                 Express 48h (+₹1,499 setup)
@@ -215,8 +225,18 @@ export const InteractivePricingEstimator: React.FC = () => {
                 return (
                   <div
                     key={addon.id}
+                    role="checkbox"
+                    aria-checked={isChecked}
+                    tabIndex={0}
+                    aria-label={`Toggle ${addon.name} addon`}
                     onClick={() => toggleAddon(addon.id)}
-                    className={`p-3.5 rounded-2xl border cursor-pointer transition-all ${
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleAddon(addon.id);
+                      }
+                    }}
+                    className={`p-3.5 rounded-2xl border cursor-pointer transition-all focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
                       isChecked
                         ? 'bg-cyan-950/30 border-cyan-500/50 shadow-md shadow-cyan-500/10'
                         : 'bg-black/30 border-white/10 hover:border-white/20'
@@ -272,7 +292,8 @@ export const InteractivePricingEstimator: React.FC = () => {
               href={generateWhatsAppMessage()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full md:w-auto px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-500/25 hover:-translate-y-0.5 transition-all whitespace-nowrap"
+              aria-label="Get configured monthly plan on WhatsApp"
+              className="w-full md:w-auto px-6 py-3.5 min-h-[44px] rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-500/25 hover:-translate-y-0.5 transition-all whitespace-nowrap"
             >
               <MessageCircle className="w-5 h-5 fill-white/20" />
               <span>Get This Plan on WhatsApp</span>
