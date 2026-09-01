@@ -1,0 +1,6 @@
+{
+  "name": "SYQORA NEXUS - Digital Technology Studio",
+  "description": "High-performance digital technology studio by Shubham Sonkusare and Yamini Nandanwar. Websites, intelligent digital experiences, and data dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
