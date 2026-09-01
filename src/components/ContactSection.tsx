@@ -37,11 +37,15 @@ export const ContactSection: React.FC = () => {
   };
 
   const handleSendEmail = () => {
-    const subject = encodeURIComponent(`SYQORA NEXUS Project Inquiry: ${projectType} - ${senderName}`);
-    const body = encodeURIComponent(
-      `Hi Shubham & Yamini,\n\nName: ${senderName}\nProject Type: ${projectType}\nBudget Range: ${budgetRange}\n\nProject Details:\n${message}\n\nThanks!`
-    );
-    window.location.href = `mailto:${STUDIO_CONFIG.email}?subject=${subject}&body=${body}`;
+    const subject = 'Website Project Inquiry — SYQORA NEXUS';
+    let body = `Hi Shubham,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,`;
+
+    if (senderName || message) {
+      body = `Hi Shubham,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nProject Type: ${projectType}\nPlan Tier: ${budgetRange}${message ? `\nDetails: ${message}` : ''}\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,\n${senderName || ''}`.trim();
+    }
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=iamshubham.s27@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -112,7 +116,14 @@ export const ContactSection: React.FC = () => {
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-white font-mono mt-0.5">
                         <a href="tel:8208779355" className="hover:text-purple-300 font-semibold">+91 82087 79355</a>
                         <span className="text-gray-500">•</span>
-                        <a href="mailto:yamininandanwar1310@gmail.com" className="hover:text-purple-300 truncate max-w-[150px] sm:max-w-[180px]">yamininandanwar1310@gmail.com</a>
+                        <a 
+                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=yamininandanwar1310@gmail.com&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent("Hi Yamini,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,")}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-purple-300 truncate max-w-[150px] sm:max-w-[180px]"
+                        >
+                          yamininandanwar1310@gmail.com
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -153,7 +164,14 @@ export const ContactSection: React.FC = () => {
                       <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-white font-mono mt-0.5">
                         <a href="tel:7249891311" className="hover:text-cyan-300 font-semibold">+91 72498 91311</a>
                         <span className="text-gray-500">•</span>
-                        <a href="mailto:iamshubham.s27@gmail.com" className="hover:text-cyan-300 truncate max-w-[150px] sm:max-w-[180px]">iamshubham.s27@gmail.com</a>
+                        <a 
+                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=iamshubham.s27@gmail.com&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent("Hi Shubham,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,")}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-cyan-300 truncate max-w-[150px] sm:max-w-[180px]"
+                        >
+                          iamshubham.s27@gmail.com
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -204,9 +222,11 @@ export const ContactSection: React.FC = () => {
                       {copiedField === 'email' ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
                     </button>
                     <a
-                      href={`mailto:${STUDIO_CONFIG.email}?subject=Project Consultation`}
+                      href={`https://mail.google.com/mail/?view=cm&fs=1&to=iamshubham.s27@gmail.com&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent("Hi Shubham,\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="p-1.5 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-colors"
-                      title="Send email"
+                      title="Open Gmail Draft"
                     >
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </a>

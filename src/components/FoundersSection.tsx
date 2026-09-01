@@ -139,7 +139,9 @@ export const FoundersSection: React.FC = () => {
                   )}
 
                   <a
-                    href={`mailto:${founder.email}`}
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(founder.email)}&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent(`Hi ${founder.name.split(' ')[0]},\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-gray-200 hover:text-cyan-300 transition-colors"
                   >
                     <Mail className="w-3.5 h-3.5 text-purple-400 flex-shrink-0" />
@@ -289,7 +291,9 @@ export const FoundersSection: React.FC = () => {
                 <div>
                   <span className="text-[10px] font-mono text-gray-400 block uppercase">Direct Email</span>
                   <a 
-                    href={`mailto:${selectedFounder.email}`}
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(selectedFounder.email)}&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent(`Hi ${selectedFounder.name.split(' ')[0]},\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs font-mono text-white hover:text-purple-300 font-semibold truncate block max-w-[200px]"
                   >
                     {selectedFounder.email}
@@ -352,7 +356,9 @@ export const FoundersSection: React.FC = () => {
               </a>
 
               <a
-                href={`mailto:${selectedFounder.email}?subject=Project Consultation`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(selectedFounder.email)}&su=${encodeURIComponent('Website Project Inquiry — SYQORA NEXUS')}&body=${encodeURIComponent(`Hi ${selectedFounder.name.split(' ')[0]},\n\nI'm interested in discussing a website/project with SYQORA NEXUS.\n\nPlease share more details about your services, pricing, and next steps.\n\nRegards,`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold flex items-center justify-center gap-2"
               >
                 <Mail className="w-4 h-4 text-cyan-400" />
