@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { RouterProvider, useRouter } from './router';
+import { SEOHead } from './components/SEOHead';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FoundersSection } from './components/FoundersSection';
@@ -9,18 +11,134 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { WebsiteAuditModal } from './components/WebsiteAuditModal';
 
-export default function App() {
+// Dedicated Service Pages
+import { WebsiteDevelopmentPage } from './pages/WebsiteDevelopmentPage';
+import { ThreeDWebDesignPage } from './pages/ThreeDWebDesignPage';
+import { AiSolutionsPage } from './pages/AiSolutionsPage';
+import { DataAnalyticsPage } from './pages/DataAnalyticsPage';
+import { LandingPageDevelopmentPage } from './pages/LandingPageDevelopmentPage';
+
+function AppContent() {
+  const { currentPath, navigate } = useRouter();
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
 
   const handleOpenPricing = () => {
-    const pricingEl = document.getElementById('pricing');
-    if (pricingEl) {
-      pricingEl.scrollIntoView({ behavior: 'smooth' });
+    if (currentPath === '/') {
+      const pricingEl = document.getElementById('pricing');
+      if (pricingEl) {
+        pricingEl.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/', 'pricing');
     }
   };
 
   const handleOpenAudit = () => {
     setIsAuditModalOpen(true);
+  };
+
+  const homeStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': 'https://syqora-nexus.netlify.app/#organization',
+    'name': 'SYQORA NEXUS',
+    'url': 'https://syqora-nexus.netlify.app',
+    'telephone': '+91-7249891311',
+    'email': 'iamshubham.s27@gmail.com',
+    'founder': [
+      {
+        '@type': 'Person',
+        'name': 'Shubham Sonkusare',
+        'jobTitle': 'Lead Software Engineer & Co-Founder',
+        'email': 'iamshubham.s27@gmail.com'
+      },
+      {
+        '@type': 'Person',
+        'name': 'Yamini Nandanwar',
+        'jobTitle': 'Lead Data Analyst & Co-Founder',
+        'email': 'yamininandanwar1310@gmail.com'
+      }
+    ],
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': 'Nagpur',
+      'addressRegion': 'Maharashtra',
+      'addressCountry': 'IN'
+    },
+    'priceRange': '₹₹'
+  };
+
+  const renderPageContent = () => {
+    switch (currentPath) {
+      case '/website-development':
+        return (
+          <WebsiteDevelopmentPage 
+            onOpenAuditModal={handleOpenAudit}
+            onOpenPricingCalculator={handleOpenPricing}
+          />
+        );
+      case '/3d-web-design':
+        return (
+          <ThreeDWebDesignPage 
+            onOpenAuditModal={handleOpenAudit}
+            onOpenPricingCalculator={handleOpenPricing}
+          />
+        );
+      case '/ai-solutions':
+        return (
+          <AiSolutionsPage 
+            onOpenAuditModal={handleOpenAudit}
+            onOpenPricingCalculator={handleOpenPricing}
+          />
+        );
+      case '/data-analytics':
+        return (
+          <DataAnalyticsPage 
+            onOpenAuditModal={handleOpenAudit}
+            onOpenPricingCalculator={handleOpenPricing}
+          />
+        );
+      case '/landing-page-development':
+        return (
+          <LandingPageDevelopmentPage 
+            onOpenAuditModal={handleOpenAudit}
+            onOpenPricingCalculator={handleOpenPricing}
+          />
+        );
+      case '/':
+      default:
+        return (
+          <>
+            <SEOHead 
+              title="SYQORA NEXUS | Next-Gen Digital Technology Studio — AI, Data & Web"
+              description="SYQORA NEXUS is a digital technology studio co-founded by Shubham Sonkusare & Yamini Nandanwar. High-performance bespoke websites, modern 3D web design, AI automation, and Power BI analytics dashboards for businesses in Nagpur and across India."
+              canonicalUrl="https://syqora-nexus.netlify.app"
+              structuredData={homeStructuredData}
+            />
+
+            {/* Hero Section */}
+            <Hero 
+              onOpenPricingCalculator={handleOpenPricing}
+              onOpenAuditModal={handleOpenAudit}
+            />
+
+            {/* Founders */}
+            <FoundersSection />
+
+            {/* Selected Work & Live Demos */}
+            <WorkSection />
+
+            {/* Services & Deliverables */}
+            <ServicesSection />
+
+            {/* Interactive Pricing Estimator */}
+            <InteractivePricingEstimator />
+
+            {/* Contact & Quick Brief */}
+            <ContactSection />
+          </>
+        );
+    }
   };
 
   return (
@@ -35,28 +153,9 @@ export default function App() {
         onOpenAuditModal={handleOpenAudit}
       />
 
-      {/* Main Content Sections */}
+      {/* Main Content */}
       <main id="main" className="space-y-4">
-        {/* Hero Section */}
-        <Hero 
-          onOpenPricingCalculator={handleOpenPricing}
-          onOpenAuditModal={handleOpenAudit}
-        />
-
-        {/* Founders */}
-        <FoundersSection />
-
-        {/* Selected Work & Live Demos */}
-        <WorkSection />
-
-        {/* Services & Deliverables */}
-        <ServicesSection />
-
-        {/* Interactive Pricing Estimator */}
-        <InteractivePricingEstimator />
-
-        {/* Contact & Quick Brief */}
-        <ContactSection />
+        {renderPageContent()}
       </main>
 
       {/* Footer & Floating WhatsApp */}
@@ -73,3 +172,12 @@ export default function App() {
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <RouterProvider>
+      <AppContent />
+    </RouterProvider>
+  );
+}
+

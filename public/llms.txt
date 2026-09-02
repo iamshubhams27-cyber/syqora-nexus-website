@@ -1,26 +1,27 @@
 # SYQORA NEXUS — Digital Technology Studio
 
-> SYQORA NEXUS is an elite digital engineering and technology studio founded by Shubham Sonkusare (Full-Stack Engineer & ML Researcher) and Yamini Nandanwar (Data Analyst & AI Solutions Lead). The studio specializes in high-performance bespoke web applications, enterprise business systems, luxury salon/gym digital platforms, AI-driven automation, and interactive analytics dashboards.
+> SYQORA NEXUS is an elite digital engineering and technology studio co-founded by Shubham Sonkusare (Lead Software Engineer & ML Specialist) and Yamini Nandanwar (Lead Data Analyst & BI Specialist). The studio specializes in high-performance bespoke website development, modern 3D & interactive web design, commercial AI solutions & workflow automation, and executive Power BI data analytics dashboards for businesses in Nagpur and across India.
 
-## Core Services
+## Dedicated Service Pages
 
-- [Custom Web Engineering](https://syqora-nexus.netlify.app/#services): Next.js, React, TypeScript, and Tailwind web applications built for sub-second page loads, 100/100 Core Web Vitals, and conversion optimization.
-- [AI & Machine Learning Solutions](https://syqora-nexus.netlify.app/#services): Intelligent feature integration, heuristic classification testbeds, predictive algorithms, and custom workflow automations.
-- [Enterprise Business Intelligence](https://syqora-nexus.netlify.app/#services): SQL data modeling, Power BI interactive reporting, KPI dashboards, and data-driven executive analytics.
-- [Luxury & Boutique Digital Platforms](https://syqora-nexus.netlify.app/#services): High-end digital experiences with WhatsApp booking pipelines, multi-location management, and automated lead capture.
+- [Website Development](https://syqora-nexus.netlify.app/website-development): High-performance bespoke web engineering with optimized Core Web Vitals, minimal layout shift, modern responsive design, local SEO schema, and continuous managed support.
+- [3D & Interactive Web Design](https://syqora-nexus.netlify.app/3d-web-design): GPU-accelerated micro-animations, tactile 3D UI, WebGL shaders, smooth perspective transforms, and fluid interactive web experiences.
+- [AI Solutions & Business Automation](https://syqora-nexus.netlify.app/ai-solutions): Practical AI automations, structured WhatsApp inquiry routing, automated web form logging, and rule-based validation workflows.
+- [Data Analytics & Power BI Dashboards](https://syqora-nexus.netlify.app/data-analytics): Custom executive Power BI dashboards, SQL database modeling, structured data transformation models, and real-time KPI scorecards led by Yamini Nandanwar.
+- [Landing Page Development](https://syqora-nexus.netlify.app/landing-page-development): High-converting single-page sales funnels, paid ad campaign landing pages (Meta & Google Ads), and lightweight, high-speed mobile lead capture systems.
 
-## Key Studio Pillars & Pages
+## Key Studio Pillars & Navigation
 
-- [Homepage & Overview](https://syqora-nexus.netlify.app/): Main studio portal showcasing interactive technology demos, capabilities, and live prototypes.
-- [Selected Work & Case Studies](https://syqora-nexus.netlify.app/#work): Portfolio of shipped engineering projects, including Capello Luxury Salon & Spa, Limitless Luxe Athletics, ML Phishing Threat Radar, and Nexus BI Analytics.
-- [Founders Dossier](https://syqora-nexus.netlify.app/#about): Technical backgrounds, research credentials, and leadership profiles for Shubham Sonkusare and Yamini Nandanwar.
+- [Homepage & Overview](https://syqora-nexus.netlify.app/): Main studio portal showcasing interactive technology demos, capabilities, live prototypes, and studio overview.
+- [Selected Work & Case Studies](https://syqora-nexus.netlify.app/#work): Shipped engineering portfolio including Capello Luxury Salon & Spa, Limitless Luxe Athletics, ML Phishing Threat Detector, and Nexus BI Analytics.
+- [Founders Dossier](https://syqora-nexus.netlify.app/#about): Technical profiles and credentials for Shubham Sonkusare and Yamini Nandanwar.
 - [Interactive Scope & Cost Estimator](https://syqora-nexus.netlify.app/#pricing): Live transparent pricing calculator and monthly maintenance sprint tiers.
-- [Free Website & Speed Audit](https://syqora-nexus.netlify.app/): 100-point performance, Core Web Vitals, mobile responsiveness, and SEO schema review.
-- [Direct Contact & Inquiries](https://syqora-nexus.netlify.app/#contact): Instant WhatsApp and Gmail direct links for rapid project onboarding.
+- [Free Website & Speed Audit](https://syqora-nexus.netlify.app/): Core Web Vitals, mobile responsiveness, and SEO schema review.
+- [Direct Contact & Inquiries](https://syqora-nexus.netlify.app/#contact): Instant WhatsApp and direct email channels for rapid project onboarding.
 
 ## Leadership & Contact
 
-- **Shubham Sonkusare** (Co-Founder & Tech Lead): Full-stack developer & machine learning researcher. WhatsApp/Phone: +91 72498 91311 | Email: iamshubham.s27@gmail.com
-- **Yamini Nandanwar** (Co-Founder & Data Lead): Data analyst & AI solutions specialist. WhatsApp/Phone: +91 82087 79355 | Email: yamininandanwar1310@gmail.com
-- **Studio Base**: Nagpur / Pune, Maharashtra, India
+- **Shubham Sonkusare** (Co-Founder & Tech Lead): Full-stack developer & software engineer. WhatsApp/Phone: +91 72498 91311 | Email: iamshubham.s27@gmail.com
+- **Yamini Nandanwar** (Co-Founder & Data Lead): Data analyst & business intelligence specialist. WhatsApp/Phone: +91 82087 79355 | Email: yamininandanwar1310@gmail.com
+- **Studio Location**: Nagpur, Maharashtra, India (Serving clients across India and globally)
 - **Primary Website**: https://syqora-nexus.netlify.app

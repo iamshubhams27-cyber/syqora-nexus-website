@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { STUDIO_CONFIG } from '../data/studioData';
+import { Link, useRouter } from '../router';
 import { 
   MessageCircle, 
   ArrowUp, 
@@ -16,10 +17,20 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingCalculator }) => {
+  const { currentPath, navigate } = useRouter();
   const [showFloatingBubble, setShowFloatingBubble] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleHashClick = (hash: string) => {
+    if (currentPath === '/') {
+      const elem = document.querySelector(hash);
+      if (elem) elem.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/', hash);
+    }
   };
 
   const whatsappDirect = `https://wa.me/${STUDIO_CONFIG.whatsappNumber}?text=${encodeURIComponent(
@@ -34,7 +45,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             
             {/* Studio Brand Info */}
-            <div className="md:col-span-5 space-y-3">
+            <div className="md:col-span-4 space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 via-indigo-600 to-purple-600 p-[1.5px] shadow-lg shadow-cyan-500/20 flex-shrink-0">
                   <div className="w-full h-full bg-[#070a18] rounded-[10px] overflow-hidden flex items-center justify-center">
@@ -65,42 +76,72 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
               </div>
             </div>
 
-            {/* Quick Links */}
-            <div className="md:col-span-4 grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
-                  Studio Pillars
-                </span>
-                <ul className="space-y-2 text-xs">
-                  <li><a href="#about" className="hover:text-cyan-300 transition-colors py-1 inline-block">About Founders</a></li>
-                  <li><a href="#work" className="hover:text-cyan-300 transition-colors py-1 inline-block">Selected Work</a></li>
-                  <li><a href="#services" className="hover:text-cyan-300 transition-colors py-1 inline-block">Services</a></li>
-                  <li><a href="#pricing" className="hover:text-cyan-300 transition-colors py-1 inline-block">Pricing Plans</a></li>
-                </ul>
-              </div>
+            {/* Specialized Service Pages */}
+            <div className="md:col-span-3 space-y-2">
+              <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
+                Dedicated Services
+              </span>
+              <ul className="space-y-1.5 text-xs">
+                <li>
+                  <Link to="/website-development" className="hover:text-cyan-300 transition-colors py-0.5 inline-block">
+                    Website Development
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/3d-web-design" className="hover:text-cyan-300 transition-colors py-0.5 inline-block">
+                    3D & Interactive Web Design
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/ai-solutions" className="hover:text-cyan-300 transition-colors py-0.5 inline-block">
+                    AI Solutions & Automation
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/data-analytics" className="hover:text-cyan-300 transition-colors py-0.5 inline-block">
+                    Data Analytics & Power BI
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/landing-page-development" className="hover:text-cyan-300 transition-colors py-0.5 inline-block">
+                    Landing Page Development
+                  </Link>
+                </li>
+              </ul>
+            </div>
 
-              <div className="space-y-2">
-                <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
-                  Direct Tools
-                </span>
-                <ul className="space-y-2 text-xs">
-                  <li>
-                    <button type="button" onClick={onOpenPricingCalculator} className="hover:text-cyan-300 transition-colors text-left py-1 inline-block">
-                      Scope Estimator
-                    </button>
-                  </li>
-                  <li>
-                    <button type="button" onClick={onOpenAuditModal} className="hover:text-cyan-300 transition-colors text-left py-1 inline-block">
-                      Free Speed Audit
-                    </button>
-                  </li>
-                  <li>
-                    <a href="#contact" className="hover:text-cyan-300 transition-colors py-1 inline-block">
-                      Contact Studio
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            {/* Quick Links */}
+            <div className="md:col-span-2 space-y-2">
+              <span className="text-[11px] font-mono text-white uppercase font-bold tracking-wider block">
+                Studio Pillars
+              </span>
+              <ul className="space-y-1.5 text-xs">
+                <li>
+                  <button type="button" onClick={() => handleHashClick('#about')} className="hover:text-cyan-300 transition-colors py-0.5 inline-block text-left">
+                    About Founders
+                  </button>
+                </li>
+                <li>
+                  <button type="button" onClick={() => handleHashClick('#work')} className="hover:text-cyan-300 transition-colors py-0.5 inline-block text-left">
+                    Selected Work
+                  </button>
+                </li>
+                <li>
+                  <button type="button" onClick={() => handleHashClick('#pricing')} className="hover:text-cyan-300 transition-colors py-0.5 inline-block text-left">
+                    Pricing Plans
+                  </button>
+                </li>
+                <li>
+                  <button type="button" onClick={onOpenPricingCalculator} className="hover:text-cyan-300 transition-colors text-left py-0.5 inline-block">
+                    Scope Estimator
+                  </button>
+                </li>
+                <li>
+                  <button type="button" onClick={onOpenAuditModal} className="hover:text-cyan-300 transition-colors text-left py-0.5 inline-block">
+                    Free Speed Audit
+                  </button>
+                </li>
+              </ul>
             </div>
 
             {/* Direct Connect */}
