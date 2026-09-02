@@ -57,11 +57,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAuditModal, onOpenPricingC
               </div>
 
               <p className="text-gray-400 text-xs leading-relaxed max-w-sm">
-                Next-generation digital technology studio co-founded by Shubham Sonkusare & Yamini Nandanwar. Engineering ultra-fast websites, data analytics dashboards, and commercial digital systems.
+                Next-generation digital technology studio co-founded by Shubham Sonkusare & Yamini Nandanwar. Engineering ultra-fast website development, modern 3D web experiences, and data analytics dashboards for businesses in Nagpur and across India.
               </p>
 
               <div className="text-[11px] font-mono text-cyan-300">
-                Nagpur, Maharashtra, India • Available Worldwide
+                Nagpur, Maharashtra, India • Serving Clients Across India & Worldwide
               </div>
             </div>
 

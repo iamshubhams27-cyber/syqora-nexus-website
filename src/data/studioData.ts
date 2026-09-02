@@ -5,7 +5,7 @@ export const STUDIO_CONFIG = {
   name: 'SYQORA NEXUS',
   tagline: 'Digital Technology Studio',
   headline: 'Technology that looks next-generation.',
-  subheadline: 'We combine high-performance web development, intelligent digital experiences, and data analytics to help ambitious businesses look better, work smarter, and scale faster.',
+  subheadline: 'We combine high-performance website development, modern 3D web design, intelligent AI solutions, and data analytics dashboards to help ambitious businesses in Nagpur and across India look better, work smarter, and scale faster.',
   founders: 'Shubham Sonkusare × Yamini Nandanwar',
   logoUrl: syqoraLogoImg,
   whatsappNumber: '917249891311',
@@ -86,7 +86,7 @@ export const CAPABILITIES: CapabilityItem[] = [
       'Sub-second load times with Core Web Vitals optimization',
       'Zero layout shift, 100% fluid mobile & desktop responsiveness',
       'Interactive 3D/4D micro-animations powered by GPU transforms',
-      'Production SEO architecture and structured metadata'
+      'Production SEO architecture, local search schema & fast cloud hosting'
     ],
     tech: ['React 19', 'TypeScript', 'Tailwind CSS', 'Vite', 'Motion', 'Next.js']
   },
@@ -239,13 +239,13 @@ export const SERVICES: Service[] = [
     number: '01',
     title: 'Business & Brand Websites',
     subtitle: 'Custom digital flagships built to impress and convert',
-    description: 'High-performance websites designed specifically for salons, gyms, restaurants, medical practices, and professional local service brands seeking a top-tier digital presence with continuous maintenance.',
+    description: 'High-performance website development engineered for salons, gyms, restaurants, medical practices, and growing businesses in Nagpur and across India seeking a modern digital presence with continuous maintenance.',
     deliverables: [
-      'Custom UI design matching your brand identity',
-      '100% mobile-friendly responsive layout',
+      'Custom modern UI/UX design matching your brand identity',
+      '100% mobile-friendly responsive layout & sub-second loading',
       'Instant WhatsApp booking & direct phone triggers',
-      'Fast hosting configuration & free SSL certificate',
-      'Search engine friendly structure (Local SEO)'
+      'Fast cloud hosting configuration & free SSL certificate',
+      'Search engine friendly structure & Local SEO schema'
     ],
     timeline: '3 - 7 business days',
     startingPrice: '₹4,999 / mo',
@@ -258,7 +258,7 @@ export const SERVICES: Service[] = [
     number: '02',
     title: 'High-Converting Landing Pages',
     subtitle: 'Focused campaign pages designed for maximum ROI',
-    description: 'Laser-focused single-page sales funnels engineered for advertising campaigns, product launches, or lead generation initiatives with persuasive UX copywriting and ongoing hosting.',
+    description: 'Laser-focused single-page sales funnels and modern landing pages engineered for advertising campaigns, product launches, or lead generation initiatives with persuasive UX copywriting and fast cloud hosting.',
     deliverables: [
       'Above-the-fold high impact value proposition',
       'Lead capture form with instant notifications',
@@ -277,7 +277,7 @@ export const SERVICES: Service[] = [
     number: '03',
     title: 'Data Analytics & Power BI',
     subtitle: 'Turn messy spreadsheets into clear executive profit drivers',
-    description: 'Custom Power BI dashboards, SQL querying, and automated monthly reports that give business owners instant clarity on sales, expenses, and inventory performance.',
+    description: 'Custom Power BI dashboards, SQL database modeling, and automated monthly reports that give business owners in Nagpur and throughout India instant clarity on sales, expenses, and operational performance.',
     deliverables: [
       'Interactive Power BI / Tableau dashboard setup',
       'Data cleaning, transformation & automated ingestion',
@@ -296,7 +296,7 @@ export const SERVICES: Service[] = [
     number: '04',
     title: 'Interactive UI & AI Workflows',
     subtitle: 'Next-gen web interactions and intelligent automations',
-    description: '3D visual styling, interactive client tools, automated WhatsApp chatbot setups, and smart workflows that save hours of manual clerical work every single month.',
+    description: 'Modern 3D interactive websites, smart AI-driven workflow automations, WhatsApp business routers, and custom digital tools that save hours of manual effort every single month.',
     deliverables: [
       'Custom interactive calculators and configurators',
       'WhatsApp Business auto-reply and quick routing',

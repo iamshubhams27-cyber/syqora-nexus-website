@@ -151,7 +151,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenPricingCalculator, onOpenAudit
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-gray-300 max-w-2xl leading-relaxed font-normal">
-              We combine high-speed responsive web development, intelligent digital experiences, and data analytics to help ambitious businesses look sharper, work smarter, and dominate online.
+              We combine high-speed responsive website development, modern 3D interactive web design, and data analytics dashboards to help businesses in Nagpur and across India look sharper, work smarter, and scale faster.
             </p>
 
             {/* Hero Action Buttons */}
