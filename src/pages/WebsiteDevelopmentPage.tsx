@@ -90,8 +90,8 @@ export const WebsiteDevelopmentPage: React.FC<ServicePageProps> = ({
       a: 'Yes, 100%. All our web platforms are built mobile-first with responsive layouts, fluid typography, Local SEO structured schema (JSON-LD), fast cloud hosting, free SSL certificates, and instant WhatsApp chat triggers so mobile visitors convert easily.'
     },
     {
-      q: 'How does your ongoing maintenance and monthly sprint model work?',
-      a: 'We offer continuous managed plans starting at ₹4,999/month. This covers cloud hosting, SSL maintenance, regular content updates, security patches, monthly analytics reviews, and direct founder tech support with zero surprise fees.'
+      q: 'How does your package and maintenance model work?',
+      a: 'Our website packages start from ₹5,999/-, ₹7,999/-, ₹9,999/-, and ₹19,999/- respectively. Every package covers cloud deployment, SSL certificates, responsive design, and direct founder tech support. Additional custom requirements and ongoing support can be quoted transparently as add-ons.'
     },
     {
       q: 'Can we integrate WhatsApp booking and customer lead routing?',

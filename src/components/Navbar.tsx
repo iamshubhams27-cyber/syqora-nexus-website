@@ -148,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPricingCalculator, onOpenA
             >
               <button
                 type="button"
-                onClick={() => handleNavClick('/', 'services')}
+                onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                 className="hover:text-cyan-300 transition-colors relative py-1 text-[13px] tracking-wide focus:outline-none focus:text-cyan-300 flex items-center gap-1"
                 aria-expanded={servicesDropdownOpen}
               >
@@ -163,10 +163,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenPricingCalculator, onOpenA
                       <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">Specialized Offerings</span>
                       <button 
                         type="button" 
-                        onClick={() => handleNavClick('/', 'services')}
+                        onClick={() => handleNavClick('/website-development')}
                         className="text-[10px] font-mono text-gray-400 hover:text-white"
                       >
-                        All Services
+                        Explore All
                       </button>
                     </div>
 

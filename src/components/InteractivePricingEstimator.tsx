@@ -27,10 +27,10 @@ export const InteractivePricingEstimator: React.FC = () => {
 
   const addons: Addon[] = [
     { id: 'whatsapp', name: 'Direct WhatsApp Automation & Pre-fill Booking', price: 799, description: 'One-tap dispatch for customer bookings with custom field routing' },
-    { id: 'powerbi', name: 'Power BI Executive Dashboard Integration', price: 1999, description: 'Live visual sales reports & monthly KPI data synchronization' },
+    { id: 'powerbi', name: 'Power BI Executive Dashboard Integration', price: 1999, description: 'Live visual sales reports & executive KPI data synchronization' },
     { id: 'seo', name: 'Advanced Local SEO & Google Business Schema', price: 999, description: 'Structured JSON-LD schema, local ranking booster & search indexing' },
     { id: 'multibranch', name: 'Multi-Branch & Location Navigator', price: 899, description: 'Interactive location selector with geo-routing and branch mapping' },
-    { id: 'security', name: 'ML Threat & Security Hardening Module', price: 1299, description: 'Anti-scraping, form sanitization & monthly security monitoring' },
+    { id: 'security', name: 'ML Threat & Security Hardening Module', price: 1299, description: 'Anti-scraping, form sanitization & server security monitoring' },
   ];
 
   const currentPlan = PRICING_PLANS.find(p => p.id === selectedPlanId) || PRICING_PLANS[1];
@@ -57,7 +57,7 @@ export const InteractivePricingEstimator: React.FC = () => {
       .filter(Boolean)
       .join(', ');
 
-    const text = `Hi Shubham & Yamini (SYQORA NEXUS),\n\nI configured this monthly package using your estimator:\n• Base Plan: ${currentPlan.name} (₹${currentPlan.price.toLocaleString('en-IN')}/month)\n• Add-ons Selected: ${addonNames || 'None'}\n• Launch Speed: ${deliverySpeed === 'express' ? 'Express 48-72h (+₹1,499 setup)' : 'Standard Sprint'}\n• Estimated Monthly Total: ₹${estimatedTotal.toLocaleString('en-IN')}/month\n\nLet's get this started!`;
+    const text = `Hi Shubham & Yamini (SYQORA NEXUS),\n\nI configured this package using your estimator:\n• Base Package: ${currentPlan.name} (Starts from ₹${currentPlan.price.toLocaleString('en-IN')}/-)\n• Add-ons Selected: ${addonNames || 'None'}\n• Launch Speed: ${deliverySpeed === 'express' ? 'Express 48-72h (+₹1,499)' : 'Standard Sprint'}\n• Estimated Total: ₹${estimatedTotal.toLocaleString('en-IN')}/-\n\nLet's get this started!`;
 
     return `https://wa.me/${STUDIO_CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
   };
@@ -70,21 +70,21 @@ export const InteractivePricingEstimator: React.FC = () => {
         <div className="max-w-3xl mb-12 md:mb-16 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-cyan-400 font-mono text-xs tracking-widest uppercase">
             <Calculator className="w-3.5 h-3.5" />
-            <span>AFFORDABLE MONTHLY SUBSCRIPTIONS</span>
+            <span>TRANSPARENT PACKAGE PRICING</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-            High impact. Low monthly cost.<br />
+            High-impact engineering.<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-indigo-200 to-purple-400">
-              Zero hefty upfront bills.
+              Transparent, value-driven pricing.
             </span>
           </h2>
           <p className="text-gray-300 text-base md:text-lg leading-relaxed">
-            All plans are billed affordably per month and include high-speed cloud hosting, security, and continuous founder maintenance so your site stays fast and updated.
+            Clear, transparent packages tailored to your commercial goals, with direct founder engineering and continuous high-performance delivery. Additional custom requirements can be quoted separately as add-ons.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-14" role="radiogroup" aria-label="Monthly subscription plans">
+        {/* Pricing Cards Grid - Exactly 4 Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-6 mb-14" role="radiogroup" aria-label="Website packages and pricing">
           {PRICING_PLANS.map((plan) => {
             const isSelected = selectedPlanId === plan.id;
             return (
@@ -93,7 +93,7 @@ export const InteractivePricingEstimator: React.FC = () => {
                 role="radio"
                 aria-checked={isSelected}
                 tabIndex={0}
-                aria-label={`${plan.name} plan at ₹${plan.price.toLocaleString('en-IN')} per month`}
+                aria-label={`${plan.name} package starting from ₹${plan.price.toLocaleString('en-IN')}/-`}
                 onClick={() => setSelectedPlanId(plan.id)}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
@@ -101,72 +101,95 @@ export const InteractivePricingEstimator: React.FC = () => {
                     setSelectedPlanId(plan.id);
                   }
                 }}
-                className={`relative rounded-3xl p-6 sm:p-8 flex flex-col justify-between border cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
-                  plan.popular
-                    ? 'bg-gradient-to-b from-[#0e1635] to-[#070b1c] border-cyan-500/50 shadow-2xl shadow-cyan-500/15 scale-[1.02]'
+                className={`relative rounded-3xl p-5 sm:p-6 flex flex-col justify-between border cursor-pointer transition-all duration-300 focus:outline-none focus:ring-2 ${
+                  plan.isFlagship
+                    ? isSelected
+                      ? 'bg-gradient-to-b from-[#1a1138] via-[#0d102c] to-[#070919] border-purple-400 shadow-2xl shadow-purple-500/25 focus:ring-purple-400'
+                      : 'bg-gradient-to-b from-[#140e2b] via-[#0b0c22] to-[#070919] border-purple-500/40 hover:border-purple-400/70 shadow-xl hover:shadow-purple-500/20 focus:ring-purple-400'
+                    : plan.popular
+                    ? isSelected
+                      ? 'bg-gradient-to-b from-[#0e1635] to-[#070b1c] border-cyan-400 shadow-2xl shadow-cyan-500/25 scale-[1.01] focus:ring-cyan-400'
+                      : 'bg-gradient-to-b from-[#0e1635] to-[#070b1c] border-cyan-500/50 shadow-2xl shadow-cyan-500/15 hover:border-cyan-400/80 scale-[1.01] focus:ring-cyan-400'
                     : isSelected
-                    ? 'bg-[#090e24] border-cyan-400/40 shadow-xl'
-                    : 'bg-[#080c1d] border-white/10 hover:border-white/20'
+                    ? 'bg-[#090e24] border-cyan-400/50 shadow-xl focus:ring-cyan-400'
+                    : 'bg-[#080c1d] border-white/10 hover:border-white/20 focus:ring-cyan-400'
                 }`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-mono text-[10px] font-bold tracking-widest uppercase shadow-md shadow-cyan-500/30 whitespace-nowrap">
-                    MOST POPULAR MONTHLY PLAN
+                    MOST POPULAR
+                  </div>
+                )}
+
+                {plan.isFlagship && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3.5 py-1 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400 text-white font-mono text-[10px] font-bold tracking-widest uppercase shadow-md shadow-purple-500/30 whitespace-nowrap flex items-center gap-1">
+                    <Sparkles className="w-3 h-3 text-cyan-200" />
+                    <span>PREMIUM FLAGSHIP</span>
                   </div>
                 )}
 
                 <div className="space-y-4">
                   {/* Plan Top */}
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-start justify-between gap-2">
                     <div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
+                      <h3 className="text-lg sm:text-xl font-bold text-white font-display">
                         {plan.name}
                       </h3>
-                      <p className="text-xs text-gray-400 mt-0.5">{plan.subtitle}</p>
+                      <p className="text-xs text-gray-400 mt-0.5 leading-snug">{plan.subtitle}</p>
                     </div>
 
-                    <div className={`w-5 h-5 rounded-full border flex items-center justify-center ${
-                      isSelected ? 'border-cyan-400 bg-cyan-400 text-black' : 'border-white/20'
+                    <div className={`w-5 h-5 rounded-full border flex items-center justify-center flex-shrink-0 mt-0.5 ${
+                      isSelected 
+                        ? plan.isFlagship
+                          ? 'border-purple-400 bg-purple-400 text-black'
+                          : 'border-cyan-400 bg-cyan-400 text-black' 
+                        : 'border-white/20'
                     }`}>
                       {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
                     </div>
                   </div>
 
-                  {/* Price */}
-                  <div className="pt-3 pb-4 border-y border-white/10 flex items-baseline gap-2">
-                    <span className="text-3xl sm:text-4xl font-bold font-display text-white">
-                      ₹{plan.price.toLocaleString('en-IN')}
+                  {/* Price Block: Starts from ₹X,XXX/- */}
+                  <div className="pt-3 pb-3.5 border-y border-white/10 space-y-0.5">
+                    <span className="text-[11px] text-gray-400 font-mono uppercase tracking-wider block">
+                      Starts from
                     </span>
-                    <span className="text-xs text-cyan-300 font-mono font-semibold">{plan.period}</span>
+                    <div className="text-2xl sm:text-3xl font-bold font-display text-white tracking-tight">
+                      ₹{plan.price.toLocaleString('en-IN')}/-
+                    </div>
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-2.5">
+                  <div className="space-y-2">
                     <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider block">
-                      Included Every Month
+                      Package Inclusions
                     </span>
                     <ul className="space-y-2">
                       {plan.features.map((f, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs text-gray-300">
-                          <CheckCircle2 className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5" />
-                          <span>{f}</span>
+                        <li key={idx} className="flex items-start gap-2 text-xs text-gray-300">
+                          <CheckCircle2 className={`w-3.5 h-3.5 flex-shrink-0 mt-0.5 ${
+                            plan.isFlagship ? 'text-purple-400' : 'text-cyan-400'
+                          }`} />
+                          <span className="leading-snug">{f}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-white/10 space-y-2">
-                  <span className="text-[11px] text-gray-400 block">
-                    <strong>Ideal for:</strong> {plan.idealFor}
+                <div className="pt-5 mt-5 border-t border-white/10 space-y-2">
+                  <span className="text-[11px] text-gray-400 block leading-snug">
+                    <strong className="text-gray-300">Ideal for:</strong> {plan.idealFor}
                   </span>
                   
                   <div className={`w-full py-2.5 rounded-xl font-bold text-xs text-center transition-colors ${
                     isSelected
-                      ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
+                      ? plan.isFlagship
+                        ? 'bg-purple-500/20 text-purple-200 border border-purple-500/40'
+                        : 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
                       : 'bg-white/5 text-gray-300'
                   }`}>
-                    {isSelected ? '✓ Selected Monthly Plan' : 'Click to Select'}
+                    {isSelected ? '✓ Selected Package' : 'Click to Select'}
                   </div>
                 </div>
 
@@ -175,16 +198,16 @@ export const InteractivePricingEstimator: React.FC = () => {
           })}
         </div>
 
-        {/* Interactive Custom Scope Builder */}
+        {/* Interactive Custom Scope & Add-ons Builder */}
         <div className="rounded-3xl bg-[#090d22] border border-cyan-500/30 p-6 sm:p-8 space-y-6 shadow-2xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5">
             <div>
               <div className="flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider font-semibold mb-1">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>INTERACTIVE MONTHLY ESTIMATOR</span>
+                <span>INTERACTIVE SCOPE & ADD-ON ESTIMATOR</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
-                Customize your exact monthly plan & add-ons
+                Customize your package & optional add-ons
               </h3>
             </div>
 
@@ -209,15 +232,23 @@ export const InteractivePricingEstimator: React.FC = () => {
                     : 'text-gray-300 hover:text-white'
                 }`}
               >
-                Express 48h (+₹1,499 setup)
+                Express Launch 48h (+₹1,499)
               </button>
             </div>
+          </div>
+
+          {/* Transparent Add-on Scope Clarification Callout */}
+          <div className="p-4 rounded-2xl bg-cyan-950/20 border border-cyan-500/30 flex items-start sm:items-center gap-3 text-xs text-gray-300">
+            <Sparkles className="w-4 h-4 text-cyan-400 flex-shrink-0 mt-0.5 sm:mt-0" />
+            <p className="leading-relaxed">
+              Website packages start from <strong className="text-white font-mono">₹5,999/-</strong>, <strong className="text-white font-mono">₹7,999/-</strong>, <strong className="text-white font-mono">₹9,999/-</strong>, and <strong className="text-white font-mono">₹19,999/-</strong> respectively, while additional requirements can be quoted separately as add-ons.
+            </p>
           </div>
 
           {/* Add-ons Toggles */}
           <div className="space-y-3">
             <span className="text-xs font-mono text-gray-400 uppercase tracking-wider block">
-              Optional Monthly Add-on Modules
+              Optional Add-on Modules (Quoted Separately)
             </span>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {addons.map((addon) => {
@@ -254,7 +285,7 @@ export const InteractivePricingEstimator: React.FC = () => {
                         </span>
                       </div>
                       <span className="text-xs font-mono text-cyan-300 font-bold whitespace-nowrap">
-                        +₹{addon.price.toLocaleString('en-IN')}/mo
+                        +₹{addon.price.toLocaleString('en-IN')}/-
                       </span>
                     </div>
                     <p className="text-[11px] text-gray-400 pl-6 leading-relaxed">
@@ -270,21 +301,18 @@ export const InteractivePricingEstimator: React.FC = () => {
           <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-cyan-950/60 via-[#0d1633] to-purple-950/60 border border-cyan-500/40 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-1 text-center md:text-left">
               <span className="text-xs font-mono text-cyan-300 uppercase tracking-wider block">
-                YOUR AFFORDABLE MONTHLY ESTIMATE
+                ESTIMATED PACKAGE TOTAL (STARTS FROM)
               </span>
               <div className="flex items-baseline gap-3 justify-center md:justify-start">
                 <span className="text-3xl sm:text-4xl font-bold text-white font-display">
-                  ₹{estimatedTotal.toLocaleString('en-IN')}
-                </span>
-                <span className="text-sm text-cyan-300 font-mono font-semibold">
-                  / month
+                  ₹{estimatedTotal.toLocaleString('en-IN')}/-
                 </span>
                 <span className="text-xs text-gray-400 font-mono hidden sm:inline">
                   ({currentPlan.name} + {selectedAddons.length} Add-on{selectedAddons.length !== 1 ? 's' : ''})
                 </span>
               </div>
               <p className="text-xs text-gray-300">
-                Direct founder partnership with Shubham & Yamini • Cloud hosting & maintenance included • Cancel anytime
+                Direct founder partnership with Shubham & Yamini • High-speed cloud deployment included • Additional requirements quoted transparently
               </p>
             </div>
 
@@ -292,11 +320,11 @@ export const InteractivePricingEstimator: React.FC = () => {
               href={generateWhatsAppMessage()}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Get configured monthly plan on WhatsApp"
+              aria-label="Get configured custom package quote on WhatsApp"
               className="w-full md:w-auto px-6 py-3.5 min-h-[44px] rounded-xl bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-white font-bold text-sm flex items-center justify-center gap-2.5 shadow-xl shadow-emerald-500/25 hover:-translate-y-0.5 transition-all whitespace-nowrap"
             >
               <MessageCircle className="w-5 h-5 fill-white/20" />
-              <span>Get This Plan on WhatsApp</span>
+              <span>Get Custom Quote on WhatsApp</span>
               <ArrowRight className="w-4 h-4" />
             </a>
           </div>

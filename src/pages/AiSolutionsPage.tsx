@@ -81,7 +81,7 @@ export const AiSolutionsPage: React.FC<ServicePageProps> = ({
     },
     {
       q: 'What is the pricing and timeline for an AI automation system?',
-      a: 'Custom AI solutions and workflow automations start from ₹5,499/month, with implementation cycles typically taking 5 to 12 business days depending on API integrations and data pipeline complexity.'
+      a: 'Custom AI solutions and workflow automations start from ₹7,999/-, with implementation cycles typically taking 5 to 12 business days depending on integrations and workflow complexity.'
     }
   ];
 

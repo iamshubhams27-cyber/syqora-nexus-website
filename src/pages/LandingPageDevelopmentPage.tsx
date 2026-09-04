@@ -81,7 +81,7 @@ export const LandingPageDevelopmentPage: React.FC<ServicePageProps> = ({
     },
     {
       q: 'What is the pricing for landing page development?',
-      a: 'Landing page development starts from ₹3,999/month under our managed sprint plans, including fast cloud hosting, SSL certificate, conversion form routing, and monthly maintenance.'
+      a: 'Landing page development packages start from ₹5,999/-, including fast cloud deployment, free SSL certificates, conversion form routing, and direct founder engineering support.'
     }
   ];
 

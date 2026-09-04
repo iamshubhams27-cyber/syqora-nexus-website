@@ -86,7 +86,7 @@ export const ThreeDWebDesignPage: React.FC<ServicePageProps> = ({
     },
     {
       q: 'What is the pricing and timeline for an interactive 3D website?',
-      a: 'Interactive UI and 3D web projects start from ₹5,499/month under our managed development plans, with typical turnaround timelines ranging between 5 to 12 business days depending on visual complexity.'
+      a: 'Interactive 3D website experiences and our flagship Magic Website package start from ₹19,999/-, with typical turnaround timelines ranging between 7 to 14 business days depending on visual complexity and custom interactions.'
     }
   ];
 

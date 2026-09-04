@@ -14,7 +14,7 @@ export const STUDIO_CONFIG = {
   secondaryEmail: 'sonkusareshubham27@gmail.com',
   location: 'Nagpur, Maharashtra, India',
   stats: [
-    { label: 'Starting price', value: '₹4,999/mo', sub: 'Flexible monthly or fixed' },
+    { label: 'Starting price', value: '₹5,999/-', sub: 'Transparent package pricing' },
     { label: 'Specialists', value: '2 Founders', sub: 'Direct engineering contact' },
     { label: 'Performance', value: '100 / 100', sub: 'Lighthouse & Mobile Optimized' },
     { label: 'Turnaround', value: '3-7 Days', sub: 'Rapid sprint delivery' }
@@ -316,27 +316,27 @@ export const PRICING_PLANS: PricingPlan[] = [
     id: 'starter',
     name: 'Starter Presence',
     subtitle: 'Essential modern digital presence & high-performance website',
-    price: 4999,
-    period: '/ month',
+    price: 5999,
+    period: '',
     features: [
       'Single-page ultra-fast responsive website',
       'High-speed cloud hosting & free SSL certificate',
       'Direct WhatsApp chat & one-tap call integration',
       'Google Maps & Local Business SEO metadata',
       'Modern high-contrast aesthetic & mobile optimization',
-      'Ongoing maintenance & monthly updates included',
+      'Performance optimization & sub-second page architecture',
       'Dedicated founder support with zero hidden fees'
     ],
     idealFor: 'Local businesses, solo professionals, salons & cafes',
-    ctaText: 'Start for ₹4,999/mo',
-    whatsappMessage: "Hi SYQORA NEXUS, I am interested in the Starter Presence website plan at ₹4,999/month. Let's get started!"
+    ctaText: 'Start from ₹5,999/-',
+    whatsappMessage: "Hi SYQORA NEXUS, I am interested in the Starter Presence website package starting from ₹5,999/-. Let's get started!"
   },
   {
     id: 'growth',
     name: 'Growth Studio',
     subtitle: 'Full-featured web presence + lead generation engine',
-    price: 6999,
-    period: '/ month',
+    price: 7999,
+    period: '',
     popular: true,
     features: [
       'Multi-section custom web application (Up to 5 dynamic views)',
@@ -344,30 +344,50 @@ export const PRICING_PLANS: PricingPlan[] = [
       '3D interactive dashboard elements & micro-animations',
       'Custom service catalog & dynamic price calculator',
       'Priority WhatsApp inquiry router & email alerts',
-      'Continuous technical support & monthly feature updates',
+      'Continuous technical support & performance sprint',
       'Google Analytics 4 & Meta Pixel event tracking'
     ],
     idealFor: 'Growing gyms, multi-location studios, clinics & agencies',
-    ctaText: 'Choose Growth (₹6,999/mo)',
-    whatsappMessage: "Hi SYQORA NEXUS, I want the Growth Studio plan at ₹6,999/month with full interactive features."
+    ctaText: 'Choose Growth (from ₹7,999/-)',
+    whatsappMessage: "Hi SYQORA NEXUS, I want the Growth Studio package starting from ₹7,999/- with full interactive features."
   },
   {
     id: 'enterprise',
     name: 'Enterprise Tech & BI',
     subtitle: 'Custom web development + Power BI analytics suite',
     price: 9999,
-    period: '/ month',
+    period: '',
     features: [
       'Bespoke web architecture tailored to your workflows',
       'Custom Power BI / Tableau dashboard with SQL data sync',
       'Automated executive KPI reports & revenue analysis',
       'High-security encryption & ML threat protection',
       'Dedicated direct developer support from both founders',
-      'Continuous monthly maintenance & quarterly data refresh'
+      'Complete data model handover & documentation'
     ],
     idealFor: 'Enterprises, multi-branch retailers, fintech & research teams',
-    ctaText: 'Start Enterprise (₹9,999/mo)',
-    whatsappMessage: "Hi SYQORA NEXUS, I need the Enterprise Web + Power BI Analytics suite at ₹9,999/month for my business."
+    ctaText: 'Start Enterprise (from ₹9,999/-)',
+    whatsappMessage: "Hi SYQORA NEXUS, I need the Enterprise Web + Power BI Analytics suite starting from ₹9,999/- for my business."
+  },
+  {
+    id: 'magic',
+    name: 'Magic Website ✨',
+    subtitle: '3D responsive & ultra-realistic animated website experience',
+    price: 19999,
+    period: '',
+    isFlagship: true,
+    features: [
+      '3D responsive web experiences & tactile depth',
+      'Ultra-realistic animations & physics motion',
+      'Advanced user interactions & WebGL shaders',
+      'Smooth micro-animations & scroll choreography',
+      'Premium visual effects & bespoke UI/UX',
+      'High-performance loading & GPU acceleration',
+      'Flagship brand presentation & executive polish'
+    ],
+    idealFor: 'Luxury brands, tech flagships, modern creators & high-end ventures',
+    ctaText: 'Start Magic Website (from ₹19,999/-)',
+    whatsappMessage: "Hi SYQORA NEXUS, I am interested in the Magic Website ✨ package starting from ₹19,999/- with 3D responsive and ultra-realistic animations. Let's discuss!"
   }
 ];
 

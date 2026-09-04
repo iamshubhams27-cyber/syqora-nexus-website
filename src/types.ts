@@ -68,8 +68,9 @@ export interface PricingPlan {
   name: string;
   subtitle: string;
   price: number;
-  period: string;
+  period?: string;
   popular?: boolean;
+  isFlagship?: boolean;
   features: string[];
   idealFor: string;
   ctaText: string;

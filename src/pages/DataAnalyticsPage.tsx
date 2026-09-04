@@ -87,7 +87,7 @@ export const DataAnalyticsPage: React.FC<ServicePageProps> = ({
     },
     {
       q: 'What are the pricing plans and delivery timelines for dashboards?',
-      a: 'Complete custom dashboard development starts from ₹6,999/month under our managed analytics service, with typical project delivery between 4 to 10 business days.'
+      a: 'Complete custom dashboard development starts from ₹9,999/- under our Enterprise Tech & BI package, with typical project delivery between 4 to 10 business days.'
     }
   ];
 

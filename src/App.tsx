@@ -5,7 +5,6 @@ import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { FoundersSection } from './components/FoundersSection';
 import { WorkSection } from './components/WorkSection';
-import { ServicesSection } from './components/ServicesSection';
 import { InteractivePricingEstimator } from './components/InteractivePricingEstimator';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -127,9 +126,6 @@ function AppContent() {
 
             {/* Selected Work & Live Demos */}
             <WorkSection />
-
-            {/* Services & Deliverables */}
-            <ServicesSection />
 
             {/* Interactive Pricing Estimator */}
             <InteractivePricingEstimator />

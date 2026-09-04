@@ -20,7 +20,7 @@ export const ContactSection: React.FC = () => {
   // Form State
   const [senderName, setSenderName] = useState('');
   const [projectType, setProjectType] = useState('New Website / Digital Platform');
-  const [budgetRange, setBudgetRange] = useState('₹4,999/mo (Starter)');
+  const [budgetRange, setBudgetRange] = useState('₹5,999/- (Starter)');
   const [message, setMessage] = useState('');
 
   const copyToClipboard = (text: string, field: string) => {
@@ -307,9 +307,9 @@ export const ContactSection: React.FC = () => {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono text-gray-300">Target Monthly Plan Tier</label>
-                  <div className="grid grid-cols-3 gap-2">
-                    {['₹4,999/mo (Starter)', '₹6,999/mo (Growth)', '₹9,999/mo (Enterprise)'].map((b) => (
+                  <label className="text-xs font-mono text-gray-300">Target Package Tier</label>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    {['₹5,999/- (Starter)', '₹7,999/- (Growth)', '₹9,999/- (Enterprise)', '₹19,999/- (Magic 3D)'].map((b) => (
                       <button
                         key={b}
                         type="button"
